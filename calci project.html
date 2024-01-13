@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="calci.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OIBSIP task1</title>
+    </head>
+<body>
+
+<h1 style="color: white;">Calculator</h1>
+
+<table>
+    <tr>
+        <td colspan="4"><input type="text" id="res" disabled></td>
+    </tr>
+    <tr>
+        <td><button onclick="Clear()">C</button></td>
+        <td><button onclick="append('1')">1</button></td>
+        <td><button onclick="append('2')">2</button></td>
+        <td><button onclick="append('3')">3</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="append('4')">4</button></td>
+        <td><button onclick="append('5')">5</button></td>
+        <td><button onclick="append('6')">6</button></td>
+        <td><button onclick="append('7')">7</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="append('8')">8</button></td>
+        <td><button onclick="append('9')">9</button></td>
+        <td><button onclick="append('0')">0</button></td>
+        <td><button onclick="append('*')">*</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="append('-')">-</button></td>
+        <td><button onclick="append('+')">+</button></td>
+        <td><button onclick="append('/')">/</button></td>
+        <td><button onclick="calculate()">=</button></td>
+        
+    </tr>
+</table>
+
+<script>
+    function append(value) {
+        document.getElementById("res").value += value;
+    }
+
+    function Clear() {
+        document.getElementById("res").value = "";
+    }
+
+    function calculate() {
+        try {
+            document.getElementById("res").value = eval(document.getElementById("res").value);
+        } catch (error) {
+            document.getElementById("res").value = "Error";
+        }
+    }
+</script>
+</body>
+</html>
